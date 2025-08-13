@@ -1,3 +1,5 @@
+import { bannerlogin } from "../../componentes/bannerlogin/bannerlogin.js";
+
 export function login() {
     let div = document.createElement('div');
     div.className = "div_banner2";
@@ -21,11 +23,13 @@ export function login() {
     div.appendChild(p2);
 
     // Botón de Login
-    let loginBtn = document.createElement('button');
+    let loginBtn = document.createElement('a');
     loginBtn.textContent = "Login";
     loginBtn.className = "btn-login";
-    loginBtn.addEventListener('click',()=> { alert ("Cuidadoo")
+    loginBtn.addEventListener('click', (event) => {
+        event.preventDefault();
         div.classList.add("ocultar");
+        document.body.appendChild(bannerlogin());
     });
     div.appendChild(loginBtn);
 

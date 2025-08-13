@@ -7,7 +7,7 @@
 
     display: grid;
     grid-template-columns: 325px;
-    grid-template-rows: max-content(50px) auto uato auto auto 1fr ;
+    grid-template-rows: max-content(50px) auto auto auto auto 1fr ;
     justify-content: center;
     padding: 1rem;
 
@@ -38,12 +38,12 @@
 
 /* Párrafos */
 .div_banner2 .p1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 0.5rem 0;
     font-weight: bold;
 }
 .div_banner2 .p2{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 0.5rem 0;
     font-weight: bold;
 }
@@ -51,6 +51,9 @@
 /* Botones */
 .btn-login,
 .btn-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 260px;
     height: 50px;
     max-width: 300px;
@@ -58,7 +61,7 @@
     margin: 0.5rem 0;
     border: none;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;
