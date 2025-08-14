@@ -7,7 +7,7 @@ export function banner(){
     div.appendChild(span);
 
     let aBoton = document.createElement('a');
-    aBoton.href = "pages/login/login.html"
+    aBoton.href = "componentes/bannerlogin/bannerlogin.html"
     aBoton.className = "a_boton";
     aBoton.textContent = "SHOW NOW";
     div.appendChild(aBoton);

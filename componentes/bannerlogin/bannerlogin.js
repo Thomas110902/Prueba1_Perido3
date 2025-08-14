@@ -1,90 +1,53 @@
-export function bannerlogin(){
-    let section = document.createElement("section");
-    section.className = "section2";
+import { login } from "../login/login.js";
 
-    let columna1 = document.createElement("div");
-    columna1.className = "columna1";
-    section.appendChild(columna1);
 
-    let flecha = document.createElement("img");
-    flecha.className = "flecha-Regreso";
-    flecha.src = "../../assets/icons/Back-arrow.png";
-    columna1.appendChild(flecha);
+export function bannerlogin() {
+    let div = document.createElement('div');
+    div.className = "div_banner2";
 
-    let titulo = document.createElement("h2");
-    titulo.className = "titulo";
-    titulo.textContent = "Welcome Back!";
-    columna1.appendChild(titulo);
+    // Título
+    let h2 = document.createElement('h2');
+    h2.textContent = "Geeta.";
+    h2.className = "titulo";
+    div.appendChild(h2);
 
-    let parrafo1 = document.createElement("p");
-    parrafo1.className = "texto1";
-    parrafo1.textContent = "Yay! You're back! Thanks for shopping with us. We have excited deals and promotions going on, grab your pick now!";
-    columna1.appendChild(parrafo1);
+    // Párrafo 1 en negrita
+    let p1 = document.createElement('p');
+    p1.className = "p1";
+    p1.innerHTML = "Create your fashion in your own way";
+    div.appendChild(p1);
 
-    let subtitulo = document.createElement("h3");
-    subtitulo.className = "subtitulo";
-    subtitulo.textContent = "LOG IN";
-    columna1.appendChild(subtitulo);
+    // Párrafo 2 normal
+    let p2 = document.createElement('p');
+    p2.className = "p2";
+    p2.textContent = "Each men and women has their own style, Geeta help you to create your unique style. ";
+    div.appendChild(p2);
 
-    let columna2 = document.createElement("div");
-    columna2.className = "columna2";
-    section.appendChild(columna2);
+    // Botón de Login
+    let loginBtn = document.createElement('a');
+    loginBtn.textContent = "Login";
+    loginBtn.className = "btn-login";
+    loginBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        div.classList.add("ocultar");
+       document.body.appendChild(login());
+    });
+    div.appendChild(loginBtn);
 
-    let labelEmail = document.createElement("label");
-    labelEmail.textContent = "Email address";
-    columna2.appendChild(labelEmail);
+    // Span con el texto OR en negrita 
+    let spanOr = document.createElement('span');
+    spanOr.innerHTML = "OR";
+    spanOr.className = "span-or";
+    div.appendChild(spanOr);
 
-    let divInputEmail = document.createElement("div");
-    divInputEmail.className = "input-con-icono";
-    let iconEmail = document.createElement("img");
-    iconEmail.src = "../assets/Correo-Icono.svg";
-    let inputEmail = document.createElement("input");
-    inputEmail.type = "email";
-    inputEmail.placeholder = "Enter your email";
-    divInputEmail.appendChild(iconEmail);
-    divInputEmail.appendChild(inputEmail);
-    columna2.appendChild(divInputEmail);
+    // Botón Register
+    let registerBtn = document.createElement('button');
+    registerBtn.textContent = "Register >";
+    registerBtn.className = "btn-register";
+    div.appendChild(registerBtn);
 
-    let labelPass = document.createElement("label");
-    labelPass.textContent = "Password";
-    columna2.appendChild(labelPass);
-
-    let divInputPass = document.createElement("div");
-    divInputPass.className = "input-con-icono";
-    let iconPass = document.createElement("img");
-    iconPass.src = "../assets/Bloqueo-Icono.svg";
-    let inputPass = document.createElement("input");
-    inputPass.type = "password";
-    inputPass.placeholder = "Enter your password";
-    divInputPass.appendChild(iconPass);
-    divInputPass.appendChild(inputPass);
-    columna2.appendChild(divInputPass);
-
-    let opciones = document.createElement("div");
-    opciones.className = "opciones";
-    let labelRemember = document.createElement("label");
-    let check = document.createElement("input");
-    check.type = "checkbox";
-    labelRemember.appendChild(check);
-    labelRemember.appendChild(document.createTextNode(" Remember me"));
-    let linkForgot = document.createElement("a");
-    linkForgot.href = "#";
-    linkForgot.textContent = "Forgot Password?";
-    opciones.appendChild(labelRemember);
-    opciones.appendChild(linkForgot);
-    columna2.appendChild(opciones);
-
-    let btnLogin = document.createElement("button");
-    btnLogin.className = "btn-login";
-    btnLogin.textContent = "LOG IN";
-    columna2.appendChild(btnLogin);
-
-    let footer = document.createElement("p");
-    footer.className = "footer-text";
-    footer.innerHTML = `Not registered yet? <a href="#">Create an Account</a>`;
-    columna2.appendChild(footer);
-
-    return section;
+    return div;
 }
 
-    
+// Agrega al body
+document.body.appendChild(bannerlogin());
